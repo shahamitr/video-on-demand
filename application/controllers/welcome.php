@@ -59,7 +59,13 @@ class Welcome extends CI_Controller {
 	public function clear()
 	{
 		$this->session->unset_userdata('user_history');
-		redirect('welcome/index');
+		redirect(base_url());
+	}
+
+	public function cron()
+	{
+		$this->welcome_model->populate_videos();
+		redirect(base_url());
 	}
 }
 

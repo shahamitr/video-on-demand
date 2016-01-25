@@ -86,5 +86,6 @@
 	<div id="body">
 		<ul class="nav nav-tabs nav-justified">
 			<li> <a href="<?php echo base_url();?>">Home</a></li>
+			<li> <a href="<?php echo base_url();?>welcome/cron">Get Latest Videos</a></li>
 			<li> <a href="<?php echo base_url();?>welcome/history">Watch History</a></li>
 		</ul>

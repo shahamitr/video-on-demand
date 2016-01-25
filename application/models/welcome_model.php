@@ -16,6 +16,15 @@ class Welcome_model extends CI_Model {
 		return $videoInformation;
 	}
 
+	public function populate_videos()
+	{
+		$this->curl->create('https://demo2697834.mockable.io/movies');
+		$this->curl->option('ssl_verifypeer', false);
+		$data = $this->curl->execute();
+
+		file_put_contents(BASEPATH.'../movies.json',$data);
+	}
+
 	public function set_session($videoId){
 
 		$this->load->library('session');
