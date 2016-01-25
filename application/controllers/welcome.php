@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library('session');
 		$this->load->model('welcome_model');
 	}
 
@@ -35,9 +36,11 @@ class Welcome extends CI_Controller {
 
 	public function play()
 	{
-		$this->welcome_model->set_session();
+		$videos = $this->welcome_model->get_videos();
+		$video_info = $videos->entries[$_GET['v']];
+		$this->welcome_model->set_session($_GET['v']);
 		$data['title'] = "Full Screen Video";
-		$data['video'] = $_GET['v'];
+		$data['video_info'] = $video_info;
 		$this->load->view('templates/header');
 		$this->load->view('play',$data);
 		$this->load->view('templates/footer');
@@ -46,11 +49,18 @@ class Welcome extends CI_Controller {
 	public function history()
 	{
 		$data['title'] = "Watch History";
+		$data['session_list'] = $this->session->userdata('user_history');
+		$data['videoInformation'] = json_decode(file_get_contents(base_url()."movies.json"));
 		$this->load->view('templates/header');
 		$this->load->view('watch-history',$data);
 		$this->load->view('templates/footer');
 	}
 
+	public function clear()
+	{
+		$this->session->unset_userdata('user_history');
+		redirect('welcome/index');
+	}
 }
 
 /* End of file welcome.php */

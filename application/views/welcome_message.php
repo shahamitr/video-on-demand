@@ -40,7 +40,7 @@
 
 	<div id="owl-demo" class="owl-carousel owl-theme">
 		<?php
-		foreach($videos->entries as $video) {
+		foreach($videos->entries as $key=>$video) {
 			echo '<div class="item">
 					<video controls width="80%">
 						<source class="lazyOwl" src="'.$video->contents[0]->url.'" type="video/mp4">
@@ -48,7 +48,7 @@
 						Your browser does not support the video tag.
 					</video>
 					<br>
-					<a href="'.base_url().'welcome/play?v='.$video->contents[0]->url.'">Full Screen</a>
+					<a href="'.base_url().'welcome/play?v='.$key.'">Full Screen</a>
 				</div>';
 		}
 		?>

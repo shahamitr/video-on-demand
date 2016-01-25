@@ -1,8 +1,8 @@
 <div class="text-center">
 	<h1><?= $title ?></h1>
 
-	<video controls width="80%" autoplay>
-	<source class="lazyOwl" src="<?=$video?>" type="video/mp4">
+	<video controls width="70%" >
+	<source class="lazyOwl" src="<?=$video_info->contents[0]->url?>" type="video/mp4">
 	<source src="movie.ogg" type="video/ogg">
 	Your browser does not support the video tag.
 </video>

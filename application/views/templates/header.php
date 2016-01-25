@@ -14,10 +14,6 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/owl/owl.theme.css">
 	<script src="<?php echo base_url();?>assets/owl/owl.carousel.js"></script>
 
-
-
-
-
 	<style>
 		body {
 			margin: 20px;
@@ -49,7 +45,6 @@
 			border-radius: 3px;
 			text-align: center;
 		}
-
 
 	</style>
 

@@ -10,12 +10,22 @@ class Welcome_model extends CI_Model {
 		$this->curl->option('ssl_verifypeer', false);
 		$data = $this->curl->execute();
 		$videoInformation = json_decode($data);*/
-		$videoInformation = json_decode(file_get_contents("http://10.12.43.57/video-on-demand/movies.json"));
+
+		$videoInformation = json_decode(file_get_contents(base_url()."movies.json"));
 
 		return $videoInformation;
 	}
 
-	public function set_session(){
-		$this->session("","");
+	public function set_session($videoId){
+
+		$this->load->library('session');
+
+		$user_history = $this->session->userdata('user_history');
+
+		if(!in_array($videoId,(array)$user_history)){
+			$user_history[] = $videoId;
+		}
+
+		$this->session->set_userdata("user_history",$user_history);
 	}
 }
