@@ -1,9 +1,10 @@
-# CodeIgniter 2
-Open Source PHP Framework (originally from EllisLab)
+# Video on Demand
+Online application which lists video from web service and allow you to see it in list view.
 
-For more info, please refer to the user-guide at http://www.codeigniter.com/userguide2/  
-(also available within the download package for offline use)
+List of features:
 
-**WARNING:** *CodeIgniter 2.x is no longer under development and only receives security patches until October 31st, 2015.
-Please update your installation to the latest CodeIgniter 3.x version available
-(upgrade instructions [here](http://www.codeigniter.com/userguide3/installation/upgrade_300.html)).*
+- list video in slider
+- open video in full screen 
+- maintain watch history
+
+Allication is created using codeigniter 2, At any point in tume you can refer the http://www.codeigniter.com/userguide2/  for reference.
