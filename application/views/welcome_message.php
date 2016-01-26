@@ -48,6 +48,8 @@
 						Your browser does not support the video tag.
 					</video>
 					<br>
+					'.$video->title.'
+					<br>
 					<a href="'.base_url().'welcome/play?v='.$key.'">Full Screen</a>
 				</div>';
 		}
