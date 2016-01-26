@@ -13,7 +13,7 @@
 <script>
 $(document).ready(function(){
 	$("#video1").bind("ended", function() {
-		localtion.href='<?php echo base_url();?>';
+		location.href='<?php echo base_url();?>';
 	});
 });
 </script>
